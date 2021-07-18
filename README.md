@@ -1,6 +1,26 @@
 # discord.py-ButtonsExample
 - For guys which want to operate with Buttons in Python but dont know how to.
 
+# Installing and Importing
+Install:
+```py
+pip install discord-components
+```
+
+Importing:
+```py
+from discord_components import DiscordComponents, Button, Select, SelectOption, Component
+from discord_components import *
+
+
+@client.event
+async def on_ready():
+    
+    print('We have logged in as {0.user}'.format(client))
+    DiscordComponents(client)
+
+```
+
 # responding:
 - You should respond to an interaction, or defer it.
 - Defering allows you to not respond for the next 15 minutes but you will have to respond later.
@@ -46,7 +66,60 @@ res = await bot.wait_for("button_click", check = ..., timeout = ...)
 ```
 
 
+# example code:
 
+```py
+@client.command()
+async def buttons(ctx):
+
+    b1_setup = Button(style=ButtonStyle.blue, label="Button1", emoji="💻")
+    b2_start = Button(style=ButtonStyle.green, label="Button2", emoji="💽") # not in use pls ignore
+    b3_disconnect = Button(style=ButtonStyle.red, label="Button3", emoji="🔌")
+    b4_radio_stop = Button(style=ButtonStyle.grey, label="Button4", emoji="📻")
+    b5_radio_start = Button(style=ButtonStyle.green, label="Button5",emoji="📻")
+    embed = discord.Embed(color=0x4e4040, title=f"Click a Button!")
+    embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+    embed.set_footer(text=ctx.guild.name, icon_url=ctx.guild.icon_url)
+    msg = await ctx.send(embed=embed, components=[b1_setup,b3_disconnect, b4_radio_stop, b5_radio_start])
+    loop= True
+    while loop:
+        res = await client.wait_for("button_click")
+        if res.component.label == "Setup":
+            await res.respond(
+                type=7,
+                components = []
+                )
+            
+
+
+        if res.component.label == "Button1":
+            embed = Embed(title="Button1", description=f"You pressed Button1")
+            await res.respond(
+                type=7,
+                components = []
+                )
+            await res.channel.send(embed=embed)
+
+            
+        if res.component.label == "Button2":
+            await res.respond(
+                type=7,
+                components = []
+                )
+            
+            
+        if res.component.label == "Button3":
+            await res.respond(
+                type=7,
+                components = []
+            )
+            await ctx.invoke(stop)
+        if res.component.label == "Button4":
+            await res.respond(
+                type=7,
+                components = []
+            )
+```
 
 
 
