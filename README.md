@@ -1,6 +1,9 @@
 # discord.py-ButtonsExample
 - For guys which want to operate with Buttons in Python but dont know how to.
 
+# Please leave a reaction on Discord that would be nice!
+- ✅ / 🆗
+
 # Installing and Importing
 Install:
 ```cmd
