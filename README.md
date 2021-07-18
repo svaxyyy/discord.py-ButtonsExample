@@ -22,4 +22,10 @@ Or you could just send an (ephemeral) message to the user with type 4.
 await interaction.respond(type=4, content="hi", ephemeral=False)
 ```
 
+# How to get 2 buttons on 1 row?
 
+`components=[[Button(), Button()]]`
+
+# 2 buttons on 2 rows would be:
+
+`components=[[Button(), Button()],[Button(), Button()]]`
