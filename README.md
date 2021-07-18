@@ -7,13 +7,15 @@ But almost nobody will stare at the buttons for 15 minutes so you could just def
 
 Editing the message:
 Responding with type 7 edits the original message!
-# Change
-  await msg.edit(SOMETHING)
-  await interaction.respond(type=6)
-  # to
-  await interaction.respond(type=7, SOMETHING)
+```# Change
+await msg.edit(SOMETHING)
+await interaction.respond(type=6)
+# to
+await interaction.respond(type=7, SOMETHING)```
 
 
 Sending a message:
 Or you could just send an (ephemeral) message to the user with type 4.
-  await interaction.respond(type=4, content="hi", ephemeral=False)
+```await interaction.respond(type=4, content="hi", ephemeral=False)```
+
+
