@@ -3,7 +3,7 @@
 
 # Installing and Importing
 Install:
-```py
+```cmd
 pip install discord-components
 ```
 
