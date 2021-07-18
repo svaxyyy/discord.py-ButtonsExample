@@ -72,15 +72,15 @@ res = await bot.wait_for("button_click", check = ..., timeout = ...)
 @client.command()
 async def buttons(ctx):
 
-    b1_setup = Button(style=ButtonStyle.blue, label="Button1", emoji="💻")
-    b2_start = Button(style=ButtonStyle.green, label="Button2", emoji="💽") # not in use pls ignore
-    b3_disconnect = Button(style=ButtonStyle.red, label="Button3", emoji="🔌")
-    b4_radio_stop = Button(style=ButtonStyle.grey, label="Button4", emoji="📻")
-    b5_radio_start = Button(style=ButtonStyle.green, label="Button5",emoji="📻")
+    b1 = Button(style=ButtonStyle.blue, label="Button1", emoji="💻")
+    b2 = Button(style=ButtonStyle.green, label="Button2", emoji="💽") # not in use pls ignore
+    b3 = Button(style=ButtonStyle.red, label="Button3", emoji="🔌")
+    b4 = Button(style=ButtonStyle.grey, label="Button4", emoji="📻")
+    b5 = Button(style=ButtonStyle.green, label="Button5",emoji="📻")
     embed = discord.Embed(color=0x4e4040, title=f"Click a Button!")
     embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
     embed.set_footer(text=ctx.guild.name, icon_url=ctx.guild.icon_url)
-    msg = await ctx.send(embed=embed, components=[b1_setup,b3_disconnect, b4_radio_stop, b5_radio_start])
+    msg = await ctx.send(embed=embed, components=[b1,b3, b4, b5])
     loop= True
     while loop:
         res = await client.wait_for("button_click")
