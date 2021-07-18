@@ -1,13 +1,13 @@
 # discord.py-ButtonsExample
-For guys which want to operate with Buttons in Python but dont know how to.
+- For guys which want to operate with Buttons in Python but dont know how to.
 
 # responding:
-You should respond to an interaction, or defer it.
-Defering allows you to not respond for the next 15 minutes but you will have to respond later.
-But almost nobody will stare at the buttons for 15 minutes so you could just defer the interaction by type 6.
+- You should respond to an interaction, or defer it.
+- Defering allows you to not respond for the next 15 minutes but you will have to respond later.
+- But almost nobody will stare at the buttons for 15 minutes so you could just defer the interaction by type 6.
 
 Editing the message:
-Responding with type 7 edits the original message!
+- Responding with type 7 edits the original message!
  ```py
  # Change
 await msg.edit(SOMETHING)
